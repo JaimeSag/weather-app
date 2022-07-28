@@ -1,0 +1,87 @@
+
+.main-weather {
+    background-color: #52B0FC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    padding: 3rem;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 114px 0px rgba(0,0,0,0.5);
+    max-width: 450px;
+    height: 100%;
+}
+
+.main-weather::after {
+    content: '';
+    background-image: url(../../assets/img/Grain.png);
+    background-size: 100px;
+    mix-blend-mode: multiply;
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-repeat:round;
+    bottom: 0;
+    position: absolute;
+}
+
+.main-weather::before {
+    content: '';
+    background-color: #3B8BDC;
+    width: 150%;
+    height: 70%;
+    bottom: 0;
+    left: calc(-25%);
+    position: absolute;
+    border-radius: 200vw 200vw 0 0 ;
+    z-index: 0;
+}
+
+.main-weather * {
+    z-index: 1;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.additional-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+}
+
+.additional-info h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.additional-info span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.temp {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.location {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.weather-icon {
+    height: 250px;
+}
+
+.weather-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 30px rgba(0,0,0,.5));
+}
