@@ -30,17 +30,15 @@ const SearchBox = (props) => {
           type="text"
           name="place"
           onChange={handleInputChange}
-          className="form-control"
+          
           placeholder="Search location"
           aria-label="Search location"
-          aria-describedby="button-addon2"
         />
         <button
           className="btn btn-outline-secondary"
           type="submit"
-          id="button-addon2"
         >
-          Buscar
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
     </>

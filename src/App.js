@@ -4,7 +4,7 @@ import AsideWeather from "./components/AsideWeather/AsideWeather";
 import SearchBox from "./components/SerachBox";
 
 function App() {
-  const [inputValue, setInputValue] = useState("Ecatepec");
+  const [inputValue, setInputValue] = useState("Palo Alto");
   const [locationData, setLocationData] = useState(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
       if (result.cod === 200) {
         setLocationData(result);
       }
-    }
+    };
 
     fetchData();
   }, [inputValue]);
@@ -27,11 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      <div id="search-box" className="search-box col-md-6 bg-light">
-        <SearchBox onSubmit={getData} />
-      </div>
       <div className="widget row m-0">
-        <AsideWeather data={locationData}/>
+        <AsideWeather data={locationData} />
+        <div id="search-box" className="search-box col-md-6 hidden">
+          <SearchBox onSubmit={getData} />
+        </div>
       </div>
     </div>
   );

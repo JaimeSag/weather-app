@@ -1,6 +1,6 @@
 
 .main-weather {
-    background-color: #52B0FC;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -10,8 +10,9 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0px 0px 114px 0px rgba(0,0,0,0.5);
-    max-width: 450px;
+    width: 450px;
     height: 100%;
+    z-index: 1;
 }
 
 .main-weather::after {
@@ -30,7 +31,7 @@
 
 .main-weather::before {
     content: '';
-    background-color: #3B8BDC;
+    background-color: var(--sec-bg-color);
     width: 150%;
     height: 70%;
     bottom: 0;
@@ -47,6 +48,12 @@
 .actions {
     display: flex;
     justify-content: space-between;
+}
+
+button {
+    background-color: unset;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .additional-info {

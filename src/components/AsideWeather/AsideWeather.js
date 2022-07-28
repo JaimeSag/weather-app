@@ -22,6 +22,9 @@ const AsideWeather = (props) => {
 
         {location ? (
           <>
+            {location.weather[0].icon.includes("n")
+              ? document.documentElement.setAttribute("data-theme", "night")
+              : document.documentElement.setAttribute("data-theme", "day")}
             <div className="weather-icon">
               <img
                 src={`http://openweathermap.org/img/wn/${location.weather[0].icon}@4x.png`}
