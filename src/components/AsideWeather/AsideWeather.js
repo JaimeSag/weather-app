@@ -9,8 +9,8 @@ const AsideWeather = (props) => {
   }
 
   return (
-    <>
-      <div className="main-weather col-md-6">
+    <div className="main-weather">
+      <div className="container">
         <div className="actions">
           <button className="btn" onClick={toggleMenu}>
             Search for places
@@ -28,7 +28,7 @@ const AsideWeather = (props) => {
             <div className="weather-icon">
               <img
                 src={`http://openweathermap.org/img/wn/${location.weather[0].icon}@4x.png`}
-                alt=""
+                alt="Weather icon"
               />
             </div>
             <div className="main-data">
@@ -52,7 +52,7 @@ const AsideWeather = (props) => {
           </>
         ) : null}
       </div>
-    </>
+    </div>
   );
 };
 

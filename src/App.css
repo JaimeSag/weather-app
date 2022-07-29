@@ -3,19 +3,18 @@
 [data-theme="day"] {
   --bg-color: #52b0fc;
   --sec-bg-color: #3b8bdc;
-  --thr-bg-color: #2792F5;
+  --thr-bg-color: #2792f5;
   --search-bg-color: #3886cc;
 }
 
 [data-theme="night"] {
   --bg-color: #3a3e4a;
   --sec-bg-color: #2e3139;
-  --thr-bg-color: #07101D;
+  --thr-bg-color: #07101d;
   --search-bg-color: #21232b;
 }
 
 * {
-  transform: 0.2s;
   box-sizing: border-box;
 }
 
@@ -32,70 +31,6 @@ body {
   min-height: 100vh;
 }
 
-.search-box {
-  background-color: var(--search-bg-color);
-  height: 90%;
-  padding: 3rem;
-  width: 450px;
-  position: relative;
-  top: 0;
-  transform: translateX(205px);
-  transition: 0.3s;
-  border-radius: 0 40px 40px 0;
-}
-
-.search-box.hidden {
-  transform: translateX(20px);
-}
-
-.input-group {
-  display: flex;
-  position: relative;
-}
-
-.input-group input {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  border: none;
-  font-size: 1rem;
-  padding: 10px 15px;
-  color: #fff;
-  width: 100%;
-}
-
-.input-group input:focus-visible {
-  outline: none;
-}
-
-.input-group input:focus ~ button {
-  background-color: var(--sec-bg-color);
-  transform: translate(6px, -6px);
-  box-shadow: -10px 10px 20px -5px rgba(0, 0, 0, 0.5);
-}
-
-.input-group input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.input-group button {
-  position: absolute;
-  right: 0;
-  height: 100%;
-  border-radius: 50%;
-  height: 38px;
-  width: 38px;
-}
-
-.control {
-  display: block;
-  text-align: end;
-  margin-bottom: 1rem;
-}
-
-#btn-close {
-  background-color: none;
-}
-
 .btn {
   border: none;
   color: rgb(240, 240, 240);
@@ -107,8 +42,10 @@ body {
 }
 
 .widget {
-  width: 1000px;
-  height: 700px;
+  width: 900px;
+  height: 90vh;
+  max-height: 700px;
+  min-height: 600px;
   position: relative;
   margin: auto;
   display: flex;
@@ -129,4 +66,21 @@ body {
 
 .extra:hover {
   right: 0;
+}
+
+@media (max-height: 780px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .widget {
+    width: 720px;
+  }
+}
+
+@media (max-width: 760px) {
+  .widget {
+    width: 100%;
+    position: unset;
+  }
 }
