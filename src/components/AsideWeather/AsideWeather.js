@@ -4,8 +4,8 @@ const AsideWeather = (props) => {
   let location = props.data;
 
   function toggleMenu() {
-    const btn = document.getElementById("search-box");
-    btn.classList.toggle("hidden");
+    document.getElementById("search-box").classList.toggle("hidden");
+    document.querySelector(".main-weather").classList.toggle("translate");
   }
 
   return (

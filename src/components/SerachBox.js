@@ -14,8 +14,8 @@ const SearchBox = (props) => {
   };
 
   function toggleMenu() {
-    const btn = document.getElementById("search-box");
-    btn.classList.toggle("hidden");
+    document.getElementById("search-box").classList.toggle("hidden");
+    document.querySelector(".main-weather").classList.toggle("translate");
   }
 
   return (
@@ -30,14 +30,10 @@ const SearchBox = (props) => {
           type="text"
           name="place"
           onChange={handleInputChange}
-          
           placeholder="Search location"
           aria-label="Search location"
         />
-        <button
-          className="btn btn-outline-secondary"
-          type="submit"
-        >
+        <button className="btn btn-outline-secondary" type="submit">
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
