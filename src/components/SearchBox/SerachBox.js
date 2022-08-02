@@ -1,4 +1,4 @@
-import './SearchBox.css';
+import "./SearchBox.css";
 import { useState } from "react";
 
 const SearchBox = (props) => {

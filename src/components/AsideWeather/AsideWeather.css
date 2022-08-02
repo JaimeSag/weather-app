@@ -79,7 +79,7 @@ button {
   font-weight: 400;
 }
 
-.additional-info span {
+.additional-info .measurement-value {
   font-size: 2rem;
   font-weight: 500;
 }
@@ -102,6 +102,9 @@ button {
   filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
 }
 
+.measurement-unit {
+  font-size: 1rem;
+}
 
 @media (max-width: 760px) {
   .main-weather {
@@ -110,7 +113,7 @@ button {
     border-radius: 0;
     transform: translate(0);
   }
-  
+
   .main-weather.translate {
     transform: translateX(0);
   }

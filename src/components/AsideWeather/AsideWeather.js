@@ -15,6 +15,26 @@ const AsideWeather = (props) => {
           <button className="btn" onClick={toggleMenu}>
             Search for places
           </button>
+          <div className="">
+            <input
+              type="radio"
+              name="units"
+              id="metric"
+              value="metric"
+              checked={props.units === "metric"}
+              onChange={(event) => props.onChange(event.target.value)}
+            />
+            <label htmlFor="metric">°C</label>
+            <input
+              type="radio"
+              name="units"
+              id="imperial"
+              value="imperial"
+              checked={props.units === "imperial"}
+              onChange={(event) => props.onChange(event.target.value)}
+            />
+            <label htmlFor="imperial">°F</label>
+          </div>
           <button className="btn">
             <i className="fa-solid fa-location-crosshairs"></i>
           </button>
@@ -32,20 +52,29 @@ const AsideWeather = (props) => {
               />
             </div>
             <div className="main-data">
-              <div className="temp">{`${location.main.temp}°`}</div>
+              <div className="temp">{`${location.main.temp}°${
+                props.units === "metric" ? "C" : "F"
+              }`}</div>
               <p className="location">{`${location.name}, ${location.sys.country}`}</p>
               <div className="additional-info">
                 <div>
                   <h3>Wind speed</h3>
-                  <span>{location.wind.speed}</span>
+                  <span className="measurement-value">
+                    {location.wind.speed}
+                  </span>
+                  <span className="measurement-unit">
+                    {props.units === "metric" ? "m/s" : "mi/s"}
+                  </span>
                 </div>
                 <div>
                   <h3>Humidity</h3>
-                  <span>{`${location.main.humidity}`}</span>
+                  <span className="measurement-value">{`${location.main.humidity}`}</span>
+                  <span className="measurement-unit">%</span>
                 </div>
                 <div>
                   <h3>Pressure</h3>
-                  <span>{`${location.main.pressure}`}</span>
+                  <span className="measurement-value">{`${location.main.pressure}`}</span>
+                  <span className="measurement-unit">hPa</span>
                 </div>
               </div>
             </div>
