@@ -7,11 +7,12 @@ function App() {
   const [inputValue, setInputValue] = useState("Svalbard");
   const [locationData, setLocationData] = useState(null);
   const [units, setUnits] = useState('metric');
+  const API_KEY = '';
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=206a73512f32dfa611eccd13c89d9fef&units=${units}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_KEY}&units=${units}`
       );
       const result = await response.json();
       if (result.cod === 200) setLocationData(result);

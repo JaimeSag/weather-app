@@ -15,7 +15,7 @@ const AsideWeather = (props) => {
           <button className="btn" onClick={toggleMenu}>
             Search for places
           </button>
-          <div className="">
+          <div>
             <input
               type="radio"
               name="units"
