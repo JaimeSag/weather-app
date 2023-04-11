@@ -7,7 +7,7 @@ function App() {
   const [inputValue, setInputValue] = useState("Svalbard");
   const [locationData, setLocationData] = useState(null);
   const [units, setUnits] = useState('metric');
-  const API_KEY = '';
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     const fetchData = async () => {
