@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import AsideWeather from "./components/AsideWeather/AsideWeather";
-import SearchBox from "./components/SearchBox/SerachBox";
+import SearchBox from "./components/SearchBox/SearchBox.tsx";
 
 function App() {
   const [inputValue, setInputValue] = useState("Svalbard");
