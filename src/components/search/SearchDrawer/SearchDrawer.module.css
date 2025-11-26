@@ -1,0 +1,110 @@
+.container {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 20px), -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 90%;
+  padding: 2rem;
+  border-radius: 0 40px 40px 0;
+
+  background-color: var(--surface-drawer);
+
+  transition: transform 0.3s ease, background-color 0.8s ease-in-out;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 100%;
+
+    background-color: var(--surface-drawer);
+
+    transition: left 0.3s, background-color 0.8s ease-in-out;
+  }
+
+  &::after {
+    pointer-events: none;
+    content: "";
+    user-select: none;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 0 40px 40px 0;
+
+    opacity: 0.1;
+    background-image: url(/assets/grain.png);
+    background-repeat: round;
+    background-size: 100px;
+    mix-blend-mode: multiply;
+  }
+
+  &.visible {
+    transform: translate(0%, -50%);
+
+    &::before {
+      left: -20px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.content {
+  overflow-y: auto;
+  margin-top: 2rem;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &:hover::-webkit-scrollbar {
+    width: 8px;
+  }
+}
