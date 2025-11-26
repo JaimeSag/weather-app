@@ -1,36 +1,72 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import AsideWeather from "./components/AsideWeather/AsideWeather";
-import SearchBox from "./components/SearchBox/SearchBox.tsx";
+import { SearchDrawer } from "./components/search/SearchDrawer/SearchDrawer.tsx";
+import { CurrentWeather } from "./components/weather/CurrentWeather/CurrentWeather.tsx";
+import { WeatherCard, WeatherHeader } from "./components/weather/WeatherCard/WeatherCard.tsx";
+import { WeatherDetails } from "./components/weather/WeatherDetails/WeatherDetails.tsx";
+import { SearchQuery, useWeather } from "./hooks/useWeather.tsx";
 
 function App() {
-  const [inputValue, setInputValue] = useState("Svalbard");
-  const [locationData, setLocationData] = useState(null);
-  const [units, setUnits] = useState('metric');
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const [isOpen, setIsOpen] = useState(false);
+  const { data, loading, setSearchQuery, setUnits, units } = useWeather();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_KEY}&units=${units}`
-      );
-      const result = await response.json();
-      if (result.cod === 200) setLocationData(result);
-    };
+    if (!data) return;
 
-    fetchData();
-  }, [inputValue, units]);
+    const isNight = data.weather[0].icon.includes("n");
 
-  const getData = (data) => setInputValue(data);
-  const getUnits = (units) => setUnits(units);
+    document.documentElement.classList.toggle("night", isNight);
+  }, [data]);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleParamsChange = (changes: Partial<SearchQuery>) => {
+    setSearchQuery(prev => ({
+      ...prev,
+      ...changes
+    } as SearchQuery));
+  };
 
   return (
-    <div className="App">
-      <div className="widget">
-        <AsideWeather data={locationData} onChange={getUnits} units={units} />
-        <div id="search-box" className="search-box hidden">
-          <SearchBox onSubmit={getData} />
-        </div>
+    <div className="weather-app">
+      <div className="weather-widget">
+        <h1 className="sr-only">Weather App</h1>
+
+        <WeatherCard
+          isShifted={isOpen}
+          header={
+            <WeatherHeader
+              data={data}
+              onChange={handleParamsChange}
+              onToggleMenu={toggleMenu}
+              onUnitChange={setUnits}
+              units={units}
+              isOpen={isOpen}
+              isLoading={loading}
+            />
+          }
+        >
+          <CurrentWeather
+            condition={data?.weather[0].main}
+            icon={data?.weather[0].icon}
+            unit={units === "metric" ? "C" : "F"}
+            temp={data?.main.temp}
+            isLoading={loading}
+          />
+
+          <WeatherDetails
+            data={data}
+            units={units}
+            isLoading={loading}
+          />
+        </WeatherCard>
+
+        <SearchDrawer
+          isOpen={isOpen}
+          onClose={toggleMenu}
+          onSubmit={handleParamsChange}
+          isLoading={loading}
+        />
       </div>
     </div>
   );
