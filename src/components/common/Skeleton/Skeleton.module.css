@@ -1,0 +1,25 @@
+.skeleton {
+	display: inline-block;
+
+	border-radius: 9999px;
+
+	background-color: rgba(255, 255, 255, 0.05);
+	background-image: linear-gradient(90deg,
+			rgba(255, 255, 255, 0.1) 0px,
+			rgb(255, 255, 255, 0.2) 40px,
+			rgba(255, 255, 255, 0.1) 80px);
+	background-size: 600px;
+
+	animation: skeleton-shimmer 1.5s infinite linear;
+}
+
+@keyframes skeleton-shimmer {
+	0% {
+		background-position: -100px;
+	}
+
+	40%,
+	100% {
+		background-position: 140px;
+	}
+}
