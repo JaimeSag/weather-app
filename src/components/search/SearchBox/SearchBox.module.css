@@ -1,0 +1,39 @@
+.group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.submit {
+  cursor: pointer;
+
+  position: absolute;
+  right: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  color: #fff;
+
+  background: transparent;
+
+  transition: transform 0.3s ease;
+}
+
+.input {
+  padding-right: 40px;
+
+  &:focus~.submit {
+    transform: translate(6px, -6px);
+    background-color: var(--surface-shape-start);
+    box-shadow: -10px 10px 20px -5px rgba(0, 0, 0, 0.5);
+  }
+}
