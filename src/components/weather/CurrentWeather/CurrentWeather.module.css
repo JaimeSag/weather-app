@@ -1,0 +1,55 @@
+.container {
+  margin-bottom: 3rem;
+}
+
+.iconContainer {
+  position: relative;
+
+  img {
+    pointer-events: none;
+    user-select: none;
+
+    aspect-ratio: 1;
+    width: 200px;
+
+    object-fit: contain;
+  }
+}
+
+.backIcon {
+  position: absolute;
+  z-index: -1;
+  transform: scale(1.1);
+
+  filter: blur(50px);
+
+  animation: bloom 30s ease-in-out infinite;
+}
+
+.temp {
+  margin-bottom: 0.5rem;
+
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 4rem;
+  line-height: 1;
+}
+
+.state {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes bloom {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(2);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
