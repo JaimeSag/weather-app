@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import styles from './Skeleton.module.css';
+import styles from "./Skeleton.module.css";
 
 type SkeletonProps = {
   className?: string,
