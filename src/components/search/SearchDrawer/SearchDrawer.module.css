@@ -46,7 +46,7 @@
     border-radius: 0 40px 40px 0;
 
     opacity: 0.1;
-    background-image: url(/assets/grain.png);
+    background-image: var(--bg-image);
     background-repeat: round;
     background-size: 100px;
     mix-blend-mode: multiply;
@@ -57,6 +57,23 @@
 
     &::before {
       left: -20px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    & {
+      z-index: 1;
+      transform: translate(-150%, -50%);
+      height: 100%;
+      border-radius: 0;
+    }
+
+    &.visible {
+      transform: translate(-50%, -50%);
+
+      &::before {
+        left: 0;
+      }
     }
   }
 }

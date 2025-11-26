@@ -1,4 +1,6 @@
 import { X } from "lucide-react";
+import { CSSProperties } from "react";
+import { BASE_URL } from "../../../config.ts";
 import { SearchQuery } from "../../../hooks/useWeather";
 import { City } from "../../../types/index.ts";
 import { CitiesSection, CityList } from "../CityList/CityList";
@@ -29,7 +31,9 @@ export function SearchDrawer({
   const handleSearch = (city: string) => onSubmit({ type: "city", value: city });
 
   return (
-    <aside className={`${styles.container} ${isOpen ? styles.visible : ""}`}>
+    <aside className={`${styles.container} ${isOpen ? styles.visible : ""}`}
+      style={{ "--bg-image": `url(${BASE_URL}assets/grain.png)` } as CSSProperties}
+    >
       <SearchDrawerHeader onClose={onClose} />
 
       <SearchBox onSubmit={handleSearch}

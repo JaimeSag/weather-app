@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
+import { BASE_URL } from "../../../config.ts";
 import { SearchQuery } from "../../../hooks/useWeather";
 import { UnitSystem, WeatherData } from "../../../types/index.ts";
 import { Skeleton } from "../../common/Skeleton/Skeleton";
@@ -30,7 +31,9 @@ export function WeatherCard({
 }: WeatherCardProps) {
 
   return (
-    <div className={`${styles.container} ${isShifted ? styles.isShifted : ""}`}>
+    <div className={`${styles.container} ${isShifted ? styles.isShifted : ""}`}
+      style={{ "--bg-image": `url(${BASE_URL}assets/grain.png)` } as CSSProperties}
+    >
       {header}
       <main className={styles.body}>
         {children}

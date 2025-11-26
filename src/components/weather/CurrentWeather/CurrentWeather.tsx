@@ -1,3 +1,4 @@
+import { BASE_URL } from "../../../config";
 import { Skeleton } from "../../common/Skeleton/Skeleton";
 import styles from "./CurrentWeather.module.css";
 
@@ -24,7 +25,7 @@ export function CurrentWeather({
           height={200}
           aria-hidden="true"
         >
-          <use xlinkHref={`/assets/sprite.svg#${icon}`}></use>
+          <use xlinkHref={`${BASE_URL}assets/sprite.svg#${icon}`}></use>
         </svg>
 
         <svg className={styles.icon}
@@ -32,7 +33,7 @@ export function CurrentWeather({
           height={200}
           aria-hidden="true"
         >
-          <use xlinkHref={`/assets/sprite.svg#${icon}`}></use>
+          <use xlinkHref={`${BASE_URL}assets/sprite.svg#${icon}`}></use>
         </svg>
       </div>
 
