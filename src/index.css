@@ -1,75 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
 
 @property --surface-shape-start {
-	inherits: true;
-	initial-value: #46a1f4;
-	syntax: "<color>";
+  inherits: true;
+  initial-value: #46a1f4;
+  syntax: "<color>";
 }
 
 @property --surface-shape-end {
-	inherits: true;
-	initial-value: #3a8dd8;
-	syntax: "<color>";
+  inherits: true;
+  initial-value: #3a8dd8;
+  syntax: "<color>";
 }
 
 :root {
-	--glass-bg: rgba(255, 255, 255, 0.1);
-	--glass-border: rgba(255, 255, 255, 0.2);
-	--glass-hover: rgba(255, 255, 255, 0.2);
-	--focus-ring: rgba(255, 255, 255, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-hover: rgba(255, 255, 255, 0.2);
+  --focus-ring: rgba(255, 255, 255, 0.5);
 
-	--text-main: #ffffff;
-	--radius-pill: 9999px;
-	--radius-card: 40px;
+  --text-main: #ffffff;
+  --radius-pill: 9999px;
+  --radius-card: 40px;
 
-	--surface-card: #57b4ff;
-	--surface-shape-start: #46a1f4;
-	--surface-shape-end: #3a8dd8;
-	--surface-drawer: #3886cc;
-	--surface-app: #e6f4ff;
+  --surface-card: #57b4ff;
+  --surface-shape-start: #46a1f4;
+  --surface-shape-end: #3a8dd8;
+  --surface-drawer: #3886cc;
+  --surface-app: #e6f4ff;
 
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .night {
-	--surface-card: #3a3e4a;
-	--surface-shape-start: #2e3139;
-	--surface-shape-end: #000000;
-	--surface-drawer: #21232b;
-	--surface-app: #1b1d23;
+  --surface-card: #3a3e4a;
+  --surface-shape-start: #2e3139;
+  --surface-shape-end: #000000;
+  --surface-drawer: #21232b;
+  --surface-app: #1b1d23;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: "Geist", sans-serif;
-	background-color: #c8d8e7;
+  font-family: "Geist", sans-serif;
+  background-color: #c8d8e7;
 }
 
 button,
 input {
-	border-radius: 0;
+  border-radius: 0;
 
-	font: inherit;
-	font-feature-settings: inherit;
-	font-variation-settings: inherit;
-	color: inherit;
-	letter-spacing: inherit;
+  font: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 
-	opacity: 1;
-	background-color: transparent;
+  opacity: 1;
+  background-color: transparent;
 }
 
 ol,
 ul,
 menu {
-	list-style: none;
+  list-style: none;
 }
 
 h1,
@@ -78,6 +78,22 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: inherit;
-	font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.sr-only {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border-width: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
 }
