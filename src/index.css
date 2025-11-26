@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
 
 @property --surface-shape-start {
 	inherits: true;
-	initial-value: #46A1F4;
-	syntax: '<color>';
+	initial-value: #46a1f4;
+	syntax: "<color>";
 }
 
 @property --surface-shape-end {
 	inherits: true;
-	initial-value: #3A8DD8;
-	syntax: '<color>';
+	initial-value: #3a8dd8;
+	syntax: "<color>";
 }
 
 :root {
@@ -22,9 +22,9 @@
 	--radius-pill: 9999px;
 	--radius-card: 40px;
 
-	--surface-card: #57B4FF;
-	--surface-shape-start: #46A1F4;
-	--surface-shape-end: #3A8DD8;
+	--surface-card: #57b4ff;
+	--surface-shape-start: #46a1f4;
+	--surface-shape-end: #3a8dd8;
 	--surface-drawer: #3886cc;
 	--surface-app: #e6f4ff;
 
@@ -49,7 +49,7 @@
 
 body {
 	font-family: "Geist", sans-serif;
-	background-color: #C8D8E7;
+	background-color: #c8d8e7;
 }
 
 button,
