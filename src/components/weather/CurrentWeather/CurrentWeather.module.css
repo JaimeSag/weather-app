@@ -17,15 +17,10 @@
 }
 
 .backIcon {
-  will-change: transform;
-
   position: absolute;
   z-index: -1;
   transform: scale(1.1);
-
   filter: blur(50px) brightness(1.6);
-
-  animation: bloom 30s ease-in-out infinite;
 }
 
 .temp {
@@ -40,18 +35,4 @@
 .state {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
-}
-
-@keyframes bloom {
-  0% {
-    transform: rotate(0deg) scale(1.1);
-  }
-
-  50% {
-    transform: rotate(180deg) scale(2);
-  }
-
-  100% {
-    transform: rotate(360deg) scale(1.1);
-  }
 }
