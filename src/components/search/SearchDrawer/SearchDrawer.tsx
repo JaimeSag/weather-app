@@ -32,7 +32,7 @@ export function SearchDrawer({
 
   return (
     <aside className={`${styles.container} ${isOpen ? styles.visible : ""}`}
-      style={{ "--bg-image": `url(${BASE_URL}assets/grain.png)` } as CSSProperties}
+      style={{ "--bg-image": `url(${BASE_URL}assets/grain.jpg)` } as CSSProperties}
     >
       <SearchDrawerHeader onClose={onClose} />
 

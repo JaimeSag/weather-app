@@ -32,7 +32,7 @@ export function WeatherCard({
 
   return (
     <div className={`${styles.container} ${isShifted ? styles.isShifted : ""}`}
-      style={{ "--bg-image": `url(${BASE_URL}assets/grain.png)` } as CSSProperties}
+      style={{ "--bg-image": `url(${BASE_URL}assets/grain.jpg)` } as CSSProperties}
     >
       {header}
       <main className={styles.body}>
