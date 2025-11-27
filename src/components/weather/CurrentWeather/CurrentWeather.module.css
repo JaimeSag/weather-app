@@ -17,11 +17,13 @@
 }
 
 .backIcon {
+  will-change: transform;
+
   position: absolute;
   z-index: -1;
   transform: scale(1.1);
 
-  filter: blur(50px);
+  filter: blur(50px) brightness(1.6);
 
   animation: bloom 30s ease-in-out infinite;
 }
